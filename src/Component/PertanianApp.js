@@ -168,7 +168,6 @@ export class Pertanian extends Component {
 
       return (
         <Fragment>
-          <h2> Alat ukur ambang lebar h(3/2)</h2>
           <Form>
             <Item
               validateStatus={bError ? 'error' : ''}
@@ -202,6 +201,11 @@ export class Pertanian extends Component {
                   <label> Alat Ukur {toLabel(v)} </label>
                   <Input disabled={true}
                     value={this.state[v]}
+                    style={{
+                      letterSpacing: '2.5px',
+                      fontWeight: 1000,
+                      color: '#2c2c2c',
+                    }}
                   />
                 </Item>
               )

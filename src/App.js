@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {LocaleProvider} from 'antd'
 import enUS from 'antd/lib/locale-provider/en_US'
-import {Layout, Menu, Icon} from 'antd'
+import {Layout, Menu} from 'antd'
 import './App.css'
 import {
   PertanianForm,
@@ -10,8 +10,8 @@ import {
 
 const {
   Header,
-  Sider,
   Content,
+  Footer,
 } = Layout
 
 export default class App extends Component {
@@ -32,46 +32,27 @@ export default class App extends Component {
   render() {
     return (
       <LocaleProvider locale={enUS}>
-        <Layout style={{height: '100vh'}}>
-          <Sider
-            trigger={null}
-            collapsible
-            collapsed={this.state.collapsed}>
-            <div className="logo"/>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-              <Menu.Item key="1">
-                <Icon type="user" />
-                <span>nav 1</span>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="video-camera" />
-                <span>nav 2</span>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="upload" />
-                <span>nav 3</span>
-              </Menu.Item>
-            </Menu>
-          </Sider>
+        <Layout>
           <Layout>
-            <Header style={{background: '#fff', padding: 0}}>
-              <Icon
-                className="trigger"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={this.toggle}
-              />
+            <Header className="header" style={{background: '#fff', padding: 0}}>
+              <div className="logo">
+                <h1>Alat Ukur</h1>
+              </div>
+              <Menu theme="dark" mode="horizontal">
+              </Menu>
             </Header>
             <Content style={{
               margin: '24px 16px',
               padding: 24,
               background: '#fff',
-              minHeight: 280,
             }}>
               <PertanianForm/>
             </Content>
+            <Footer style={{textAlign: 'center'}}>
+            AlatUkur ©2018 Created by Elminaya
+            </Footer>
           </Layout>
         </Layout>
-
       </LocaleProvider>
     )
   }
