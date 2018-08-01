@@ -58,7 +58,7 @@ export class Pertanian extends Component {
      */
     constructor(props) {
       super(props)
-      this.handleChange = this.handleChange.bind(this)
+      this.onChange = this.onChange.bind(this)
     }
 
     /**
@@ -133,7 +133,7 @@ export class Pertanian extends Component {
     /**
      * @param {object} e as event
      */
-    handleChange(e) {
+    onChange(e) {
       e.preventDefault()
       const result = {}
       this.props.form.validateFields((err, values) => {
@@ -152,7 +152,7 @@ export class Pertanian extends Component {
      * @return {object} component
      */
     render() {
-      const {handleChange} = this
+      const {onChange} = this
 
       const {
         getFieldDecorator,
@@ -176,7 +176,7 @@ export class Pertanian extends Component {
               {getFieldDecorator('b', {
                 rules: [{required: true, message: 'Mohon isi variable b!'}],
               })(
-                <Input prefix={'b'} placeholder="b" onChange={handleChange}/>
+                <Input prefix={'b'} placeholder="b" onChange={onChange}/>
               )}
             </Item>
             <Item
@@ -186,7 +186,7 @@ export class Pertanian extends Component {
               {getFieldDecorator('Q', {
                 rules: [{required: true, message: 'Mohon isi variable Q!'}],
               })(
-                <Input prefix={'Q'} placeholder="Q" onChange={handleChange}/>
+                <Input prefix={'Q'} placeholder="Q" onChange={onChange}/>
               )}
             </Item>
             { this.rumus.map((v, k) => {
