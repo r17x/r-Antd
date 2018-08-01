@@ -3,6 +3,10 @@ import {LocaleProvider} from 'antd'
 import enUS from 'antd/lib/locale-provider/en_US'
 import {Layout, Menu, Icon} from 'antd'
 import './App.css'
+import {
+  PertanianForm,
+} from './Component/PertanianApp'
+
 
 const {
   Header,
@@ -63,7 +67,7 @@ export default class App extends Component {
               background: '#fff',
               minHeight: 280,
             }}>
-            Content
+              <PertanianForm/>
             </Content>
           </Layout>
         </Layout>
